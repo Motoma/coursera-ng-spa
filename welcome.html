@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="welcomeApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="welcome-app.js"></script>
+    <title>Welcome Coursera Students</title>
+  </head>
+  <body>
+    <div ng-controller="WelcomeController">
+      <h1>{{ sayHello() }}</h1>
+      <input type="text" ng-model="name">
+        {{ name }}
+    </div>
+  </body>
+</html>
