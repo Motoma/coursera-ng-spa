@@ -22,8 +22,11 @@
 
   function ShoppingListCheckOffService () {
     var buyArray = [{'amount': 2, 'name': 'pizzas'},
-                {'amount': 24, 'name': 'beers'}];
-    var boughtArray = [];
+                    {'amount': 24, 'name': 'beers'},
+                    {'amount': 1, 'name': 'tofurkey'}];
+    var boughtArray = [{'amount': 1, 'name': 'burbon'},
+                       {'amount': 1, 'name': 'scotch'},
+                       {'amount': 1, 'name': 'beer'}];
 
     this.markAsBought = function (index) {
       var item = buyArray.splice(index, 1)[0];
