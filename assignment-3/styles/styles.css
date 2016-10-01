@@ -53,3 +53,6 @@ input[type="text"] {
 ul {
   clear: left;
 }
+.error {
+  color: red;
+}

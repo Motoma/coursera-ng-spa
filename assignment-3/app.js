@@ -15,6 +15,7 @@
 
     narrowCtrl.keyword = '';
     narrowCtrl.found = [];
+    narrowCtrl.hasSearched = false;
 
     narrowCtrl.remove = function (index) {
       narrowCtrl.found.splice(index, 1);
@@ -23,6 +24,7 @@
     narrowCtrl.getMatchedMenuItems = function () {
       var promise = MenuSearchService.getMatchedMenuItems(narrowCtrl.keyword);
       promise.then(function (results) {
+        narrowCtrl.hasSearched = true;
         narrowCtrl.found = results;
       })
     };
@@ -61,7 +63,8 @@
       templateUrl: 'foundItems.html',
       scope: {
         items: '<foundItems',  // one way binding
-        remove: '&onRemove'  // pass method
+        remove: '&onRemove',   // pass method
+        hasSearched : '<'      // one way binding
       },
       controller: 'FoundItemsDirectiveController',
       bindToController: true,
