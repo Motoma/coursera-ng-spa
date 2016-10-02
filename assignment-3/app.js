@@ -22,11 +22,16 @@
     }
 
     narrowCtrl.getMatchedMenuItems = function () {
-      var promise = MenuSearchService.getMatchedMenuItems(narrowCtrl.keyword);
-      promise.then(function (results) {
+      if(narrowCtrl.keyword === '') {
         narrowCtrl.hasSearched = true;
-        narrowCtrl.found = results;
-      })
+        narrowCtrl.found = [];
+      } else {
+        var promise = MenuSearchService.getMatchedMenuItems(narrowCtrl.keyword);
+        promise.then(function (results) {
+          narrowCtrl.hasSearched = true;
+          narrowCtrl.found = results;
+        })
+      }
     };
   }
 
