@@ -5,4 +5,4 @@
     <p>{{ item.description }}</p>
   </li>
 </ul>
-<div class="error" ng-if="foundItemsCtrl.hasSearched && foundItemsCtrl.items">Nothing found</div>
+<div class="error" ng-if="foundItemsCtrl.hasSearched && foundItemsCtrl.items.length == 0">Nothing found</div>
