@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Your Chinese Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+
+  <body ng-app="MenuApp">
+    <ui-view></ui-view>
+  </body>
+
+  <!-- libraries -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+
+  <!-- modules -->
+  <script src="src/menuapp.module.js"></script>
+  <script src="src/data.module.js"></script>
+
+  <!-- services -->
+  <script src="src/menudata.service.js"></script>
+
+  <!-- controllers -->
+  <script src="src/categories.controller.js"></script>
+  <script src="src/items.controller.js"></script>
+
+  <!-- components -->
+  <script src="src/items.component.js"></script>
+  <script src="src/categories.component.js"></script>
+
+  <!-- routes -->
+  <script src="routes.js"></script>
+
+</html>
