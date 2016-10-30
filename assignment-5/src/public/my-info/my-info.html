@@ -1,0 +1,36 @@
+<div class="container" ng-if="myInfo.isRegistered">
+  <h2 id="menu-categories-title" class="text-center">
+    Your registered info:
+  </h2>
+  <div class="text-center form-group">
+    <div class="col-xs-5 col-centered">
+      <p>First Name:</p>
+      <input type="text" class="form-control" readonly
+        name="firstName" value="{{ myInfo.firstName }}">
+      <br>
+
+      <p>Last Name:</p>
+      <input type="text" class="form-control" readonly
+        name="lastName" value="{{ myInfo.lastName }}">
+      <br>
+
+      <p>Email Address:</p>
+      <input type="text" class="form-control" readonly
+        name="email" value="{{ myInfo.email }}">
+      <br>
+
+      <p>Phone Number:</p>
+      <input type="text" class="form-control" readonly
+        name="phoneNumber" value="{{ myInfo.phoneNumber }}">
+      <br>
+
+      <p>Your Favorite Dish:</p>
+    </div>
+    <menu-item menu-item="myInfo.menuItem"></menu-item>
+  </div>
+</div>
+<div class="container" ng-if="!myInfo.isRegistered">
+  <h2 id="menu-categories-title" class="text-center">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </h2>
+</div>

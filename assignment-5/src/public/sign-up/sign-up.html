@@ -1,0 +1,76 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">
+    Sign Up For Our Newsletter!
+  </h2>
+  <div class="text-center form-group">
+    <div class="col-xs-5 col-centered">
+      <form name="signUpForm" novalidate="true">
+        <input type="text" class="form-control" required
+          name="firstName" ng-model="signUp.firstName"
+          placeholder="First Name">
+        <p>&nbsp;
+          <span ng-if="signUpForm.firstName.$error.required
+            && signUpForm.firstName.$touched">
+            First Name is required
+          </span>
+        </p>
+
+        <input type="text" class="form-control" required
+          name="lastName" ng-model="signUp.lastName"
+          placeholder="Last Name">
+        <p>&nbsp;
+          <span ng-if="signUpForm.lastName.$error.required
+            && signUpForm.lastName.$touched">
+            Last Name is required
+          </span>
+        </p>
+
+        <input type="text" class="form-control" required
+          name="email" ng-model="signUp.email"
+          pattern=".*@.*"
+          placeholder="email.address@example.com">
+        <p>&nbsp;
+          <span ng-if="signUpForm.email.$invalid
+            && signUpForm.email.$touched">
+            Email is required<br>(user@example.com)
+          </span>
+        </p>
+
+        <input type="text" class="form-control" required
+          name="phoneNumber" ng-model="signUp.phoneNumber"
+          pattern="(\d{3})-(\d{3})-(\d{4})"
+          placeholder="751-345-4241">
+        <p>&nbsp;
+          <span ng-if="signUpForm.phoneNumber.$invalid
+            && signUpForm.phoneNumber.$touched">
+            Phone Number is required<br>(123-456-7890)
+          </span>
+        </p>
+
+        <input type="text" class="form-control" required
+          name="favoriteDish" ng-model="signUp.favoriteDish"
+          placeholder="What is your favorite dish (e.g. D12)">
+        <p>&nbsp;
+          <span ng-if="signUpForm.favoriteDish.$error.required
+              && signUpForm.favoriteDish.$touched
+              && !signUp.badFavoriteDish">
+            Please enter a valid menu item<br>(A8, DK1, D12, etc.)
+          </span>
+          <span ng-if="signUp.badFavoriteDish">
+            No such item exists
+          </span>
+        </p>
+
+        <button class="btn"
+          ng-disabled="signUpForm.$invalid"
+          ng-click="signUp.saveUserInfo();">
+          Sign up!
+        </button>
+      </form>
+
+      <span ng-if="signUp.successfullySaved">
+        Your information has been saved.
+      </span>
+    </div>
+  </div>
+<div>
